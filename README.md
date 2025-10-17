@@ -1,7 +1,7 @@
 <h1>AI ESR Signal Classifier</h1>
 
 <h2>Project Overview</h2>
-This project implements an AI-based signal classifier for ESR-like data. The goal is to classify synthetic electron spin resonance (ESR) signals into three distinct classes based on their characteristic patterns:
+<p>This project implements an AI-based signal classifier for ESR-like data. The goal is to classify synthetic electron spin resonance (ESR) signals into three distinct classes based on their characteristic patterns:</p>
 <ul>
   <li>Class 0: Single Gaussian-like peak</li>
   <li>Class 1: Double Gaussian peaks</li>
@@ -35,15 +35,16 @@ Install required packages:
 </ul>
 
 <h3>Generate Dataset</h3>
-python data_generation.py # This will generate signals.npy and labels.npy containing 300 samples per class by default.
+<p>This will generate signals.npy and labels.npy containing 300 samples per class by default.</p>
+python data_generation.py 
 
 <h3>Load Dataset and Create Train/Test Sets</h3>
-python dataset.py # This script converts the signals and labels into PyTorch tensors and splits them into training and test datasets using DataLoader.
+<p>This script converts the signals and labels into PyTorch tensors and splits them into training and test datasets using DataLoader.</p>
+python dataset.py 
 
 <h2>Usage</h2>
-Once the dataset is ready, you can train a PyTorch model (like a simple 1D CNN or fully connected network) to classify the signals.
+<p>Once the dataset is ready, you can train a PyTorch model (like a simple 1D CNN or fully connected network) to classify the signals.</p>
 
-Example workflow:<br>
 1. Generate dataset (data_generation.py)
 2. Load dataset and create DataLoaders (dataset.py)
 3. Build and train your model (model.py)
