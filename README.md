@@ -1,4 +1,4 @@
-<h1>AI ESR Signal Classifier</h1>
+# AI ESR Signal Classifier
 
 <h2>Project Overview</h2>
 <p>This project implements an AI-based signal classifier for ESR-like data. The goal is to classify synthetic electron spin resonance (ESR) signals into three distinct classes based on their characteristic patterns:</p>
