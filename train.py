@@ -76,6 +76,6 @@ plt.legend()
 plt.savefig('test_accuracy.png', dpi=300)
 plt.show()
 
-torch.save(model.state_dict(), "best_model.pth")
+torch.save(model.state_dict(), "model.pth")
 np.save("loss_history.npy", np.array(loss_history))
 np.save("accuracy_history.npy", np.array(accuracy_history))
