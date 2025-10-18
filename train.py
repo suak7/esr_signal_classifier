@@ -1,5 +1,6 @@
 from model import SignalClassifier
 from dataset import train_loader, test_loader
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -72,3 +73,7 @@ plt.ylabel('Accuracy (%)')
 plt.title('Test Accuracy Over Time')
 plt.legend()
 plt.show()
+
+torch.save(model.state_dict(), "best_model.pth")
+np.save("loss_history.npy", np.array(loss_history))
+np.save("accuracy_history.npy", np.array(accuracy_history))
