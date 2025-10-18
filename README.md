@@ -14,10 +14,8 @@ The dataset is designed to mimic realistic ESR measurements, including natural v
 
 ## Features
 * Generates synthetic signals with different patterns: Class 0, Class 1, and Class 2
-* Train/test split with PyTorch DataLoaders
 * Noise addition to simulate realistic experimental conditions
 * Splitting of dataset into training and test sets using PyTorch DataLoader
-* Saves best model for later inference
 * Visualizes performance curves
 
 ## Getting Started
