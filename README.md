@@ -23,12 +23,11 @@ The dataset is generated programmatically using Python and is designed to mimic 
 ## Getting Started
 
 Requirements:
-<ul>
-  <li><a href="https://www.python.org/downloads/"></a>Python 3.13+</li>
-  <li><a href="https://numpy.org/install/">NumPy</a></li>
-  <li><a href="https://matplotlib.org/stable/install/index.html">Matplotlib</li>
-  <li><a href="https://pytorch.org/get-started/locally/">PyTorch</li>
-</ul>
+
+* <a href="https://www.python.org/downloads/">Python 3.13+</a>
+* <a href="https://numpy.org/install/">NumPy</a>
+* <a href="https://matplotlib.org/stable/install/index.html">Matplotlib</a>
+* <a href="https://pytorch.org/get-started/locally/">PyTorch</a>
 
 Install Packages:
 ```bash
@@ -56,4 +55,4 @@ python3 train.py
 python3 visualize.py
 ```
 
-* Tip: If you want to increase complexity/randomization in the signals, increase the noise, increase dataset variability, add validation split, or use dropout.
+* Tip: If you want to increase complexity in the signals, increase noise, increase dataset variability, add validation split, or use dropout.
