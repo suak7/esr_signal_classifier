@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-x = np.linspace(0, 1, 100) # 100 points between 0 and 1
+x = np.linspace(0, 1, 300) # 300 points between 0 and 1
 
 def generate_class0_signal(x): # single peak (Gaussian-like)
     center = np.random.uniform(0.4, 0.6)
@@ -33,6 +33,8 @@ def generate_class2_signal(x): # irregular peaks with increased noise
     signal = 1.0*(np.sin(5*x) + 0.5*np.sin(8*x))
     noise = np.random.normal(0, 0.07, size=x.shape)
     signal = signal + noise
+    
+    return signal
 
 data = []
 labels = []
@@ -47,16 +49,18 @@ for class_label in [0, 1, 2]: # generating samples for each class
             signal = generate_class1_signal(x)
         else:
             signal = generate_class2_signal(x)
+
+        signal = np.array(signal, dtype=np.float32)
         
         data.append(signal)
         labels.append(class_label)
 
-combined = list(zip(data, labels)) # randomly mixing signals and labels
-random.shuffle(combined)
-data, labels = zip(*combined)
-
-data = np.array(data)
-labels = np.array(labels)
-
+data = np.stack(data)               
+labels = np.array(labels, dtype=np.int64)
+indices = np.arange(len(data))
+np.random.shuffle(indices)
+data = data[indices]
+labels = labels[indices]
+  
 np.save("signals.npy", data)
 np.save("labels.npy", labels)
