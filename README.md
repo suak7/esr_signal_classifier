@@ -44,18 +44,16 @@ python -m venv venv
 pip install numpy matplotlib torch scikit-learn
 ```
 
-## Generate Dataset
+## Generating the Plots
 ```bash
+# Generate dataset
 python3 data_generation.py
-```
 
-## Train the Model
-```bash
+# Train the model
 python3 train.py
-```
 
-## Visualize Training Curves
-```bash
+# Visualize training curves
 python3 visualize.py
 ```
+
 * Tip: If you want to increase complexity/randomization in the signals, increase the noise, increase dataset variability, add validation split, or use dropout.
