@@ -23,7 +23,8 @@ The dataset is generated programmatically using Python and is designed to mimic 
   <li>Visualizes performance curves</li>
 </ul>
 
-<h2>Getting Started</h2>
+## Getting Started
+
 Requirements:
 <ul>
   <li>Python 3.13+</li>
@@ -31,28 +32,3 @@ Requirements:
   <li><a href="https://matplotlib.org/stable/install/index.html">Matplotlib</li>
   <li><a href="https://pytorch.org/get-started/locally/">PyTorch</li>
 </ul>
-
-<h3>Generate Dataset</h3> 
-```bash
-# create + activate venv (macOS / Linux)
-python3 -m venv venv
-source venv/bin/activate
-
-# Windows (PowerShell)
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-
-# install dependencies
-pip install numpy matplotlib torch scikit-learn
-
-<h3>Load Dataset and Create Train/Test Sets</h3>
-<p>This script converts the signals and labels into PyTorch tensors and splits them into training and test datasets using DataLoader.</p>
-python dataset.py 
-
-<h2>Usage</h2>
-<p>Once the dataset is ready, you can train a PyTorch model (like a simple 1D CNN or fully connected network) to classify the signals.</p>
-
-1. Generate dataset (data_generation.py)
-2. Load dataset and create DataLoaders (dataset.py)
-3. Build and train your model (model.py)
-4. Evaluate model accuracy on test set
