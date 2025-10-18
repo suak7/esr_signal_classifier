@@ -44,7 +44,6 @@ python -m venv venv
 
 # install dependencies
 pip install numpy matplotlib torch scikit-learn
-```
 
 <h3>Load Dataset and Create Train/Test Sets</h3>
 <p>This script converts the signals and labels into PyTorch tensors and splits them into training and test datasets using DataLoader.</p>
