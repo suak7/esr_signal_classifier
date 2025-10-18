@@ -1,10 +1,10 @@
-from model import SignalClassifier
-from dataset import train_loader, test_loader
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
+from model import SignalClassifier
+from dataset import train_loader, test_loader
 
 # initialize model, loss, and optimizer
 model = SignalClassifier()
@@ -19,20 +19,20 @@ loss_history = []
 accuracy_history = []
 num_epochs = 20
 
+# training loop
 for epoch in range(num_epochs):
-    # training phase
     model.train()
     total_loss = 0
-
+    
     for signals, labels in train_loader:
         signals = signals.to(device)
         labels = labels.to(device)
 
-        optimizer.zero_grad()
-        outputs = model(signals)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
+        optimizer.zero_grad() # reset gradients from previous batch
+        outputs = model(signals) # forward pass
+        loss = criterion(outputs, labels) # compute loss
+        loss.backward() # backpropagation
+        optimizer.step() # update model weights
 
         total_loss += loss.item()
 
@@ -49,7 +49,7 @@ for epoch in range(num_epochs):
             signals = signals.to(device)
             labels = labels.to(device)
             outputs = model(signals)
-            _, predicted = torch.max(outputs, 1)
+            _, predicted = torch.max(outputs, 1) # get class with highest score
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
@@ -59,21 +59,21 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch+1}/{num_epochs} | Loss: {avg_loss:.4f} | Accuracy: {accuracy:.2f}%")
 
 plt.figure()
-plt.plot(loss_history, label='Training Loss')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-plt.title('Training Loss Over Time')
+plt.plot(loss_history, label="Training Loss")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.title("Training Loss Over Time")
 plt.legend()
-plt.savefig('training_loss.png', dpi=300)
+plt.savefig("training_loss.png", dpi=300)
 plt.show()
 
 plt.figure()
-plt.plot(accuracy_history, label='Test Accuracy', color='orange')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy (%)')
-plt.title('Test Accuracy Over Time')
+plt.plot(accuracy_history, label="Test Accuracy", color="orange")
+plt.xlabel("Epoch")
+plt.ylabel("Accuracy (%)")
+plt.title("Test Accuracy Over Time")
 plt.legend()
-plt.savefig('test_accuracy.png', dpi=300)
+plt.savefig("test_accuracy.png", dpi=300)
 plt.show()
 
 torch.save(model.state_dict(), "model.pth")
