@@ -12,7 +12,7 @@ def plot_training_curves():
     plt.ylabel('Value')
     plt.title('Training Performance')
     plt.legend()
-    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.savefig('training_performance.png', dpi=300)
     plt.show()
 
 if __name__ == "__main__":
