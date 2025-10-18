@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 
 class SignalClassifier(nn.Module): # linear layers with relu activations
