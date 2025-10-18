@@ -24,12 +24,13 @@ The dataset is generated programmatically using Python and is designed to mimic 
 
 Requirements:
 <ul>
-  <li>Python 3.13+</li>
+  <li><a href="https://www.python.org/downloads/"></a>Python 3.13+</li>
   <li><a href="https://numpy.org/install/">NumPy</a></li>
   <li><a href="https://matplotlib.org/stable/install/index.html">Matplotlib</li>
   <li><a href="https://pytorch.org/get-started/locally/">PyTorch</li>
 </ul>
 
+Install Packages:
 ```bash
 # Create + activate venv (macOS / Linux)
 python3 -m venv venv
@@ -41,3 +42,20 @@ python -m venv venv
 
 # Install dependencies
 pip install numpy matplotlib torch scikit-learn
+```
+
+## Generate Dataset
+```bash
+python3 data_generation.py
+```
+
+## Train the Model
+```bash
+python3 train.py
+```
+
+## Visualize Training Curves
+```bash
+python3 visualize.py
+```
+* Tip: If you want to increase complexity/randomization in the signals, increase the noise, increase dataset variability, add validation split, or use dropout.
