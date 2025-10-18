@@ -10,7 +10,7 @@
 * Class 1: Double Gaussian peaks
 * Class 2: Irregular / high-frequency noisy pattern
 
-The dataset is generated programmatically using Python and is designed to mimic realistic ESR measurements, including natural variability and noise.
+The dataset is designed to mimic realistic ESR measurements, including natural variability and noise.
 
 ## Features
 * Generates synthetic signals with different patterns: Class 0, Class 1, and Class 2
