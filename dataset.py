@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 
 data = np.load("signals.npy")
 labels = np.load("labels.npy")
-data_tensor = torch.tensor(data, dtype=torch.long)
+data_tensor = torch.tensor(data, dtype=torch.float32)
 labels_tensor = torch.tensor(labels, dtype=torch.long)
 
 dataset = TensorDataset(data_tensor, labels_tensor)
