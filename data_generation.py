@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import random
 
 x = np.linspace(0, 1, 1000) # 1000 points between 0 and 1
 
